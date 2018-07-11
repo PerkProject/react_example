@@ -1,4 +1,8 @@
-import Calculator from './src/Arithmetic';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Hello from './src/Hello';
 
-let x = new Calculator();
-console.log(x.sqr(2));
+ReactDOM.render(
+  <Hello />,
+  document.getElementById('root')
+);
