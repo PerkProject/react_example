@@ -1,7 +1,7 @@
 class Calculator {
-    sqr(x) {
-        return x * x;
-    }
+  sqr(x) {
+    return x * x
+  }
 }
 
-export default Calculator;
+export default Calculator
