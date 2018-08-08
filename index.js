@@ -1,5 +1,9 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Hello from './src/Hello'
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-ReactDOM.render(<Hello />, document.getElementById('root'))
+import CatalogPage from './src/containers/CatalogPage';
+
+ReactDOM.render(
+    <CatalogPage />,
+    document.getElementById('root')
+  )
