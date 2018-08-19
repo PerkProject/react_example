@@ -1,21 +1,41 @@
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
+import Basket from '../components/Basket';
+import ProductCard from '../components/ProductCard';
+import { map } from 'lodash';
 
-import ProductCard from '../components/ProductCard'
-import { map } from 'lodash'
+class Catalog extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-const Catalog = ({ products }) => (
-  <div>
-    {map(products, product => <ProductCard key={product.id} {...product} />)}
-  </div>
-)
+  render() {
+    const { products } = this.props;
+
+    return (
+      <Fragment>
+       <Basket />
+        <div>
+          {
+            map(
+              products,
+              (product) => (
+                <ProductCard key={product.id} {...product} />
+              )
+            )
+          }
+        </div>
+      </Fragment>  
+    );
+  }
+}
 
 Catalog.propTypes = {
   products: PropTypes.array
-}
+};
 
 Catalog.defaultProps = {
   products: []
-}
+};
 
-export default Catalog
+export default Catalog;

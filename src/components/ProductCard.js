@@ -1,13 +1,18 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-import Image from './Image'
-import TextBox from './TextBox'
-import Price from './Price'
+import Image from './Image';
+import TextBox from './TextBox';
+import Price from './Price';
+import AddToBasket from './AddToBasket';
 
-class ProductCard extends React.Component {
+class ProductCard extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    const { image, title, price } = this.props
+    const { id, image, title, price } = this.props;
 
     return (
       <div>
@@ -16,6 +21,7 @@ class ProductCard extends React.Component {
           {title}
         </TextBox>
         <Price price={price} />
+        <AddToBasket product={this.props} />
       </div>
     )
   }
@@ -27,7 +33,7 @@ ProductCard.propTypes = {
     title: PropTypes.string,
     price: PropTypes.number,
     image: PropTypes.objectOf(Image.propTypes)
-  })
+  }),
 }
 
 ProductCard.defaultProps = {
@@ -42,4 +48,4 @@ ProductCard.defaultProps = {
   }
 }
 
-export default ProductCard
+export default ProductCard;
