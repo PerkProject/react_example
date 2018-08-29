@@ -11,4 +11,4 @@ TextBox.propTypes = {
   children: PropTypes.node
 }
 
-export default TextBox
+export default TextBox;
