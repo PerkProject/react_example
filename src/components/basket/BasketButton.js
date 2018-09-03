@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import CartContext from '../components/CartContext';
-import Button from './elements/Button';
+import React, { Component, Fragment } from 'react';
 
-class Basket extends Component {
+import CartContext from '../../helpers/CartContext';
+import Button from '../elements/Button';
+
+class BasketButton extends Component {
   render() {
     return (
       <CartContext.Consumer>
@@ -22,4 +23,4 @@ class Basket extends Component {
   }
 }
 
-export default Basket;
+export default BasketButton;
