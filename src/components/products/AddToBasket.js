@@ -15,14 +15,12 @@ class AddToBasket extends Component {
   }
 
   changeCount(type) {
-    let { count } = this.state;
     if (type === 'increment') {
-      count += 1;
-    } else if (type === 'decrement' && count > 1) {
-      count -= 1;
+      this.setState((state) => ({ count: state.count + 1 }) );
+    } 
+    else if (type === 'decrement' && count > 1) {
+      this.setState((state) => ({ count: state.count - 1 }) );
     }
-
-    this.setState({ count })
   }
 
   render() {

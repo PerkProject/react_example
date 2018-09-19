@@ -6,7 +6,7 @@ const Price = ({ price }) => (
 )
 
 Price.propTypes = {
-  price: PropTypes.number
+  price: PropTypes.string
 }
 
 Price.defaultProps = {

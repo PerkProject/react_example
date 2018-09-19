@@ -8,7 +8,7 @@ import { commonUrl } from '~/src/helpers/routes/api';
 import { imagePath } from '~/src/helpers/routes/common';
 import Link from '~/src/components/elements/Link';
 import Button from '~/src/components/elements/Button';
-import PreviewImage from './PreviewImage';
+import Thumbnails from './Thumbnails';
 
 class Gallery extends Component {
   constructor(props) {
@@ -71,17 +71,9 @@ class Gallery extends Component {
                 </Button>
               </li>
               {
-                map(
-                  images,
-                  ({ thumbUrl }, index) => (
-                    <li className='list-inline-item' key={`${index}`}>
-                      <PreviewImage 
-                        path={thumbUrl} 
-                        onClick={() => this.setActiveIndex(index)}
-                      />
-                    </li>
-                  )
-                )
+              map(
+                images, Thumbnails
+              )
               }
               <li className='list-inline-item'>
                 <Button onClick={() => this.goNext('increment')}>

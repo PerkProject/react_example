@@ -22,13 +22,13 @@ class Menu extends Component {
   }
 
   getGalleryPath() {
-    let path = galleryPath()
+    let path = galleryPath();
 
     const match = matchPath(window.location.pathname, ProductRoute);
     if (match) {
       const { id } = match.params;
 
-      path = productGalleryPath(id)
+      path = productGalleryPath(id);
     }
 
     return path

@@ -72,8 +72,8 @@ ProductCard.propTypes = {
 
 ProductCard.defaultProps = {
   id: '1',
-  title: 'Product 1',
-  descriprion: 'This is product 1',
+  title: 'Без названия',
+  descriprion: 'noname product',
   price: '11500',
   url: 'http://via.placeholder.com/200x200',
   width: '200',
