@@ -71,7 +71,7 @@ ProductCard.propTypes = {
 };
 
 ProductCard.defaultProps = {
-  id: '1',
+  id: '0',
   title: 'Без названия',
   descriprion: 'noname product',
   price: '11500',

@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+//import React, { Component } from 'react';
+//import PropTypes from 'prop-types';
 
-import Basket from '~/src/components/basket/Basket';
+//import Basket from '~/src/components/basket/Basket';
 
-const BasketContainer = () => <Basket />
+//const BasketContainer = () => <Basket />
 
-export default BasketContainer;
+//export default BasketContainer;
