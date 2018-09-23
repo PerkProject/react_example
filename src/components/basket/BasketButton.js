@@ -5,20 +5,12 @@ import Button from '~/src/components/elements/Button';
 
 class BasketButton extends Component {
   render() {
+    const { items: products } = this.props;
+    const title = `Выбрано заказов: ${products.length}`;
     return (
-      <CartContext.Consumer>
-        {
-          card => {
-            const title = `Выбрано заказов: ${card.basket.length}`;
-
-            return (
-              <Button>
-                {title}
-              </Button>
-            )
-          }
-        }
-      </CartContext.Consumer>
+      <Button>
+        {title}
+      </Button>
     );
   }
 }

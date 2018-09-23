@@ -10,7 +10,7 @@ import {
 import ProductRoute from '~/src/routes/Product';
 
 import Link from '~/src/components/elements/Link';
-import BasketButton from '~/src/components/basket/BasketButton';
+import BasketButtonContainer from '~/src/containers/BasketButtonContainer';
 import Button from '~/src/components/elements/Button';
 
 import { basketPath, contactsPath, galleryPath } from '~/src/helpers/routes/common';
@@ -65,7 +65,7 @@ class Menu extends Component {
               state: { modal: true }
             }}
           >
-            <BasketButton />
+            <BasketButtonContainer />
           </NavLink>
         </NavItem>
       </Nav>
