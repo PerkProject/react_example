@@ -2,12 +2,12 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import PreviewImage from './PreviewImage';
 
-const Thumbnails = ({ thumbUrl }, index) => (
+const Thumbnails = ({ thumbUrl }, index, activeIndex) => (
     <Fragment>
     <li className='list-inline-item' key={`${index}`}>
         <PreviewImage 
         path={thumbUrl} 
-        onClick={() => this.setActiveIndex(index)}
+        onClick={() => activeIndex.setState(index)}
         />
     </li>
     </Fragment>

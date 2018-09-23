@@ -27,7 +27,6 @@ class ProductsContainer extends Component {
       .get(producstUrl)
       .end((err, { body }) => {
         const { data } = JSONAPI.parse(body);
-        
         this.setState({
           products: camelizeKeys(data)
         })

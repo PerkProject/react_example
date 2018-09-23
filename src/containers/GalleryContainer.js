@@ -41,7 +41,6 @@ class GalleryContainer extends Component {
 
   render() {
     const { images } = this.state;
-
     return (
       <Gallery images={images} />
     );

@@ -7,7 +7,6 @@ import { map, isEmpty } from 'lodash';
 import { commonUrl } from '~/src/helpers/routes/api';
 import { imagePath } from '~/src/helpers/routes/common';
 import Link from '~/src/components/elements/Link';
-import Button from '~/src/components/elements/Button';
 import Thumbnails from './Thumbnails';
 
 class Gallery extends Component {
@@ -15,38 +14,6 @@ class Gallery extends Component {
     super(props);
 
     this.state = { activeIndex: 0 }
-  }
-
-  goBack() {
-    const { images } = this.props;
-    const imagesLength = images.length;
-    let { activeIndex } = this.state;
-    
-    activeIndex -= 1;
-    
-    if (activeIndex < 0) {
-      activeIndex = imagesLength - 1;
-    }
-
-    this.setActiveIndex(activeIndex);
-  }
-
-  goNext() {
-    const { images } = this.props;
-    const imagesLength = images.length;
-    let { activeIndex } = this.state;
-
-    activeIndex += 1;
-
-    if (activeIndex >= imagesLength) {
-      activeIndex = 0;
-    }
-
-    this.setActiveIndex(activeIndex);
-  }
-
-  setActiveIndex(activeIndex) {
-    this.setState({ activeIndex })
   }
 
   render() {
@@ -58,32 +25,20 @@ class Gallery extends Component {
     const { id, mainUrl } = images[activeIndex];
 
     return (
-      <Row className='mb-2 mt-5'>
         <Card className="mx-auto">
           <Link to={imagePath(id)}>
             <CardImg top src={commonUrl(mainUrl)} width={cardWidth}/>
           </Link>
           <CardBody className="mx-auto">
             <ul className='list-inline'>
-              <li className='list-inline-item'>
-                <Button onClick={() => this.goBack()}>
-                  {'-'}
-                </Button>
-              </li>
-              {
+            {
               map(
-                images, Thumbnails
+                images, Thumbnails(index, activeIndex)
               )
-              }
-              <li className='list-inline-item'>
-                <Button onClick={() => this.goNext('increment')}>
-                  {'+'}
-                </Button>
-              </li>
+            }
             </ul>
           </CardBody>
         </Card>
-      </Row>
     );
   }
 }
