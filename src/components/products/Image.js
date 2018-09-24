@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { commonUrl } from '~/src/helpers/routes/api';
 
 import { Media } from 'reactstrap';
 
@@ -7,7 +8,7 @@ const Image = ({ url, alt, width, height }) => (
     
   <Fragment>
   <Media object
-        src={url}
+        src={commonUrl(url)}
         width={width}
         height={height}
         alt={alt} />
