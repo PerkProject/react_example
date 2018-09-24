@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import CartContainer from './containers/CartContainer';
 import AppSwitch from './components/layouts/AppSwitch';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Provider } from 'react-redux';
+import store from '~/src/store';
 
 class App extends Component {
   constructor(props) {
@@ -11,11 +12,11 @@ class App extends Component {
 
   render() {
     return (
-      <CartContainer>
+      <Provider store={store}>
         <Router>
           <Route component={AppSwitch} />
         </Router>
-      </CartContainer>
+      </Provider>
     );
   }
 }

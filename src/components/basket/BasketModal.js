@@ -8,7 +8,7 @@ class BasketModal extends Component {
   render() {
     return (
       <Modal {...this.props}>
-        <Basket />
+        <BasketContainer />
       </Modal>
     );
   }

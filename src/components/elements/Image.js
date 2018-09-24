@@ -6,11 +6,9 @@ import { commonUrl } from '~/src/helpers/routes/api';
 
 const Image = ({ path }) => (
   <Container>
-    <Row className='mb-2 mt-5'>
       <Media object
         src={commonUrl(path)}
       />
-    </Row>
   </Container>
 );
 
